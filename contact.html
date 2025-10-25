@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="sidebar-toggle">☰</button>
+    
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hussein Zindonda</h2>
+            <p>Electrical Engineer</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html" class="active">CONTACT</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Yale University '28</p>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1>Contact Me</h1>
+        
+        <div class="content-card">
+            <div class="card-content">
+                <h2>Get In Touch</h2>
+                <ul>
+                    <li><strong>Email:</strong> hussein.zindonda@yale.edu</li>
+                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/hussein-panashe-zindonda-5a020723b">Hussein Panashe Zindonda</a></li>
+                    <li><strong>Location:</strong> New Haven, Connecticut</li>
+                </ul>
+                
+                <div class="action-links">
+                    <a href="mailto:hussein.zindonda@yale.edu" class="btn">Send Email</a>
+                    <a href="https://www.linkedin.com/in/hussein-panashe-zindonda-5a020723b" class="btn">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

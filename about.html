@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - About</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button class="sidebar-toggle">☰</button>
+    
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hussein Zindonda</h2>
+            <p>Electrical Engineer</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Yale University '28</p>
+        </div>
+    </nav>
+
+   <main class="main-content">
+    <h1>About Me</h1>
+    
+    <div class="content-card">
+        <div class="card-content">
+            <h2>Education & Background</h2>
+            <p><strong>Yale University</strong> - Bachelor of Science in Electrical Engineering (Expected May 2028)</p>
+            <p>GPA: 3.62 | ABET-Accredited Program</p>
+            
+            <h3>Technical Skills</h3>
+            <ul>
+                <li><strong>PCB Design:</strong> KiCad, Circuit Simulation</li>
+                <li><strong>Programming:</strong> C, C++, Python, HTML, CSS</li>
+                <li><strong>Tools:</strong> AutoCAD, LTspice, MATLAB</li>
+            </ul>
+        </div>
+    </div>
+</main>
+
+    <script>
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
