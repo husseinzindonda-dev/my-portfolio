@@ -210,23 +210,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* ===== PROFILE PICTURE STYLES ===== */
-/* Circular profile image with border and hover effects */
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4da6ff;
-    display: block;
-    margin: 20px auto;
-    transition: transform 0.3s ease;
-}
-
-.profile-pic:hover {
-    transform: scale(1.05);
-}
-
 /* ===== FOOTER STYLES ===== */
 /* Fixed footer at bottom of page */
 footer {
