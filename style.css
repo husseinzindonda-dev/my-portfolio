@@ -284,6 +284,12 @@ footer {
 }
 
 /* Skills Grid */
+.skill-tag::after {
+    content: " ✓";
+    color: #28a745;
+    font-weight: bold;
+}
+
 .skills-category {
     margin-bottom: 25px;
 }
