@@ -1,5 +1,4 @@
 /* ===== CSS RESET & BASE STYLES ===== */
-/* Remove default margins, padding, and set border-box for consistent sizing */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +6,6 @@
 }
 
 /* ===== GLOBAL BODY STYLES ===== */
-/* Main body styling with dark theme and flex layout for sidebar + content */
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -18,7 +16,6 @@ body {
 }
 
 /* ===== CONTENT CARD STYLES - APPLIED TO ALL PAGES ===== */
-/* Universal card style for consistent content containers across all pages */
 .content-card {
     background-color: #111111;
     border: 1px solid #333333;
@@ -63,7 +60,6 @@ body {
 }
 
 /* ===== SIDEBAR NAVIGATION STYLES ===== */
-/* Fixed sidebar with gradient background and navigation menu */
 .sidebar {
     font-weight: bolder;
     width: 250px;
@@ -137,7 +133,6 @@ body {
 }
 
 /* ===== MAIN CONTENT AREA ===== */
-/* Primary content container that sits beside the sidebar */
 .main-content {
     flex: 1;
     margin-left: 250px; /* Same as sidebar width */
@@ -184,7 +179,6 @@ body {
 }
 
 /* ===== BUTTON STYLES ===== */
-/* Reusable button styles for calls-to-action and links */
 .action-links {
     margin-top: 20px;
     display: flex;
@@ -211,7 +205,6 @@ body {
 }
 
 /* ===== FOOTER STYLES ===== */
-/* Fixed footer at bottom of page */
 footer {
     text-align: center;
     padding: 20px;
@@ -219,14 +212,13 @@ footer {
     color: #888888;
     position: fixed;
     bottom: 0;
-    width: calc(100% - 250px); /* Account for sidebar width */
-    margin-left: 250px; /* Align with main content */
+    width: calc(100% - 250px); 
+    margin-left: 250px;
     font-size: 0.9em;
     border-top: 1px solid #333333;
 }
 
 /* ===== SIDEBAR TOGGLE FOR MOBILE ===== */
-/* Hamburger menu button for mobile devices */
 .sidebar-toggle {
     display: none;
     position: fixed;
