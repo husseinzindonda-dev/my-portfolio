@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Courses</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles for course page */
+        .course-category {
+            margin-bottom: 25px;
+        }
+        .course-category p {
+            margin: 15px 0 8px 0;
+            color: var(--accent-color);
+            font-size: 1.1rem;
+        }
+        .course-category ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .course-category li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-color);
+        }
+        .course-category li strong {
+            color: var(--accent-color);
+            font-size: 1.05rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .course-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+        .course-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 40px 0;
+            padding: 20px;
+            background: linear-gradient(145deg, var(--card-bg), var(--background-dark));
+            border-radius: 10px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        .audit-badge {
+            display: inline-block;
+            background: rgba(255, 193, 7, 0.1);
+            color: #ffc107;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle">☰</button>
+    
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>Hussein Zindonda</h2>
+            <p>Electrical Engineer</p>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="projects.html">PROJECTS</a></li>
+            <li><a href="courses.html" class="active">COURSES</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p>Yale University '28</p>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <h1>Academic Coursework</h1>
+        <p class="section-subtitle">Electrical Engineering | Yale University '28</p>
+
+        <!-- Course Stats -->
+        <div class="course-stats">
+            <div class="stat-item">
+                <span class="stat-number">16+</span>
+                <span class="stat-label">Engineering Courses</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">8</span>
+                <span class="stat-label">Math & Sciences</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">6</span>
+                <span class="stat-label">CS & Programming</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">3.8</span>
+                <span class="stat-label">GPA</span>
+            </div>
+        </div>
+
+        <!-- Electrical & Computer Engineering -->
+        <div class="project-card">
+            <h2> Electrical & Computer Engineering</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>ECE 201: Digital Logic and Computer Architecture</strong>
+                            <div class="course-description">
+                                Theory of digital systems, digital coding of information, combinational and sequential system design, finite-state machines, microcode, computer arithmetic, and microprocessors. The course provides a first introduction to the design of digital circuits and computer architecture from the bottom up, covering execution paradigms, hardware description languages, and principles in modern microprocessor design. Students learn to evaluate tradeoffs of different designs and implement a principled microprocessor design.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ECE 202: Systems, Signals, and Communication</strong>
+                            <div class="course-description">
+                                Introduction to systems that sense, process, control, and communicate. MATLAB or Python programming and laboratory experiments illustrate fundamental concepts in signals and systems.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ENAS 194: Ordinary and Partial Differential Equations</strong>
+                            <div class="course-description">
+                                Basic theory of ordinary and partial differential equations with emphasis on analytical techniques for engineering and applied science problems. Topics include first-order differential equations, second-order and higher-order linear differential equations, series solutions, Laplace transforms, partial differential equations, Fourier series, and systems of first-order linear equations.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physics Department -->
+        <div class="project-card">
+            <h2> Physics</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>PHYS 180: Introductory Physics I</strong>
+                            <div class="course-description">
+                                Physics constitutes the foundation on which an understanding of Chemistry and Biology can be built. It explains how the world works on a fundamental level. Beyond this, a solid training in Physics helps develop analytical skills required in every part of our technology and information-based society. Physics provides a framework for constructing complicated systems from simple building blocks or reducing a complex problem to its simplest parts. Acquiring the skill of lucidly thinking through problems is the most important goal in physics education.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>PHYS 181: Introductory Physics II</strong>
+                            <div class="course-description">
+                                Continuation of PHYS 180, building on fundamental physics concepts with applications to electricity, magnetism, and optics. The course emphasizes developing analytical skills and the ability to think lucidly through problems, providing a framework for constructing complicated systems from simple building blocks. This foundation is essential for doctors requiring out-of-the-box thinking and engineers building on theoretical concepts to make things work from microchips to bridges.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mathematics Department -->
+        <div class="project-card">
+            <h2> Mathematics</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>MATH 115: Calculus of Functions of One Variable II</strong>
+                            <div class="course-description">
+                                Explores powerful tools for modern computing including integrals and series. Calculus lies at the heart of advances in economics, medicine, engineering, weather forecasting, and artificial intelligence. The course covers integration techniques, infinite series, Taylor series, geometric applications, parametric and polar equations, and develops skills in problem-solving, logical reasoning, and working with abstract notation. These skills help break down complex arguments, parse computer languages, and design systems and scientific experiments.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>MATH 222: Linear Algebra and Applications</strong>
+                            <div class="course-description">
+                                Linear algebra provides mathematical tools for efficiently modeling and understanding the real world. This course extends knowledge of linear equations to develop powerful tools with applications from quantum physics to social sciences. Linear algebra lies at the heart of Google's search algorithm, ChatGPT's AI language model, and Pixar's graphics engines. The tools learned allow pattern finding in large data sets and optimization solutions in economics, engineering, and medicine.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Computer Science -->
+        <div class="project-card">
+            <h2> Computer Science</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>CPSC 201: Introduction to Computer Science</strong>
+                            <div class="course-description">
+                                Introduction to computation as a process that can be formalized, analyzed, and realized in machines. Topics include formal models of computation (lambda calculus, Turing machines, computability); realization of computation in minds and machines (Boolean logic, neural networks, computer architecture); computational approaches to language (formal languages, grammars, statistical language models); and design and analysis of efficient algorithms. Students investigate these ideas by building executable models in a functional programming language.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>ENAS 130: Computational Problem Solving</strong>
+                            <div class="course-description">
+                                Prepares students to use computers as problem-solving tools through C/C++, Python, and MATLAB programming. Topics include general problem-solving techniques, object-oriented programming, elementary numerical methods, data analysis, and graphical display of computational results. Students solve a variety of problems drawn from mathematics, science, and engineering.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>CPSC 419: Advanced Software Engineering <span class="audit-badge">Auditing</span></strong>
+                            <div class="course-description">
+                                Advanced software engineering and programming techniques with focus on internet applications. Covers client- and server-side programming, database programming, client/server communication, and graphical user interface programming. Students develop a complete internet-based application from scratch with a team. Upon completion, students gain proficiency in Python, SQL, HTML/CSS, and JavaScript, and learn to build internet applications using industry-standard tools and frameworks while validating that applications conform to stated requirements.
+                                <br><br>
+                                <em style="color: var(--accent-color);">→ Currently auditing this course to expand full-stack development skills and gain practical experience with industry-standard tools and frameworks.</em>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering & Applied Science -->
+        <div class="project-card">
+            <h2> Engineering & Applied Science</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>ENAS 130: Engineering Innovation and Design</strong>
+                            <div class="course-description">
+                                Project-based learning focusing on the engineering design process and prototyping. Students learn to use computers as problem-solving tools through C/C++, Python, and MATLAB programming. Topics include general problem-solving techniques, object-oriented programming, elementary numerical methods, data analysis, and graphical display of computational results.
+                            </div>
+                        </li>
+                        <li>
+                            <strong>MENG 205: Computer-Aided Design and Manufacturing</strong>
+                            <div class="course-description">
+                                Aspects of computer-aided design and manufacture (CAD/CAM), covering the computer's role in the mechanical design and manufacturing process. Includes commercial tools for two- and three-dimensional drafting and assembly modeling, and finite-element analysis software for modeling mechanical, thermal, and fluid systems.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earth & Planetary Sciences -->
+        <div class="project-card">
+            <h2> Earth & Planetary Sciences</h2>
+            <div class="project-details">
+                <div class="course-category">
+                    <ul>
+                        <li>
+                            <strong>EPS 275: Introduction to Renewable Energy</strong>
+                            <div class="course-description">
+                                Introduction to renewable energy from an Earth-science perspective, covering physical principles of generating electrical power from natural energy flows and its transmission, use, and storage on the electrical grid. Focus on hydroelectric, wind, solar, geothermal, wave, and tidal energy, along with modern bioenergy. Includes comparison with conventional energy technology (fossil fuels and nuclear power) and selected topics in electricity markets. The course is quantitative with bi-weekly problem sets, providing theoretical and practical knowledge of renewable energy.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Summary -->
+        <div class="project-card">
+            <h2> Skills Acquired</h2>
+            <div class="project-details">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div>
+                        <p><strong>Technical Skills:</strong></p>
+                        <ul>
+                            <li>Circuit Design & Analysis</li>
+                            <li>Digital Logic Design</li>
+                            <li>Signal Processing</li>
+                            <li>CAD/CAM (MENG 205)</li>
+                            <li>Renewable Energy Systems (EPS 275)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Programming:</strong></p>
+                        <ul>
+                            <li>C/C++ (ENAS 130)</li>
+                            <li>Python (ENAS 130, ECE 202, CPSC 419)</li>
+                            <li>MATLAB (ENAS 130, ECE 202)</li>
+                            <li>SQL (CPSC 419)</li>
+                            <li>HTML/CSS (CPSC 419)</li>
+                            <li>JavaScript (CPSC 419)</li>
+                            <li>Functional Programming (CPSC 201)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p><strong>Mathematical Tools:</strong></p>
+                        <ul>
+                            <li>Linear Algebra (MATH 222)</li>
+                            <li>Differential Equations (ENAS 194)</li>
+                            <li>Calculus (MATH 115)</li>
+                            <li>Fourier Analysis (ECE 202, ENAS 194)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hussein Zindonda | Electrical Engineering Student at Yale University</p>
+    </footer>
+
+    <script>
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
