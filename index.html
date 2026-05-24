@@ -585,11 +585,11 @@
                 </button>
                 <button class="stat-btn" onclick="open_sec('courses',this)">
                     <span class="stat-val">90</span>
-                    <span class="stat-lbl">Courses</span>
+                    <span class="stat-lbl">Education</span>
                 </button>
                 <button class="stat-btn" onclick="open_sec('extras',this)">
                     <span class="stat-val">87</span>
-                    <span class="stat-lbl">Extracurriculars</span>
+                    <span class="stat-lbl">Leadership</span>
                 </button>
                 <button class="stat-btn" onclick="open_sec('contact',this)">
                     <span class="stat-val">95</span>
@@ -659,7 +659,7 @@ const SECTIONS = {
                 </div>
             </div>
             <div class="about-intro">
-                I'm an AI and software engineer who also leads and creates. I'm a Yale University junior studying Electrical Engineering &amp; Computer Science, currently interning as an AI Engineering Intern at SynovAI where I focus on data mining. I'm passionate about building intelligent systems and I bring that same drive to everything I do — from leading Dzana Afrobeats Dance Club as President to serving on the ColorStack board as Communications Chair.
+                I'm a full-stack software engineer and startup co-founder who also leads and creates. I'm a Yale University student studying Electrical Engineering &amp; Computer Science, currently interning as an AI Research &amp; Data Strategy Intern at SynovAI. I'm passionate about building intelligent systems and products that matter — from founding BiKu, a mobile platform for subletting and roommate matching, to leading Yale Dzana Dance as President and serving on the ColorStack board as Communications Chair.
             </div>
             <div class="about-highlights">
                 <div class="hl-item">
@@ -668,34 +668,44 @@ const SECTIONS = {
                 </div>
                 <div class="hl-item">
                     <div class="hl-label">Internship</div>
-                    <div class="hl-val">AI Engineering Intern &nbsp;&middot;&nbsp; SynovAI</div>
+                    <div class="hl-val">AI Research &amp; Data Strategy Intern &nbsp;&middot;&nbsp; SynovAI</div>
+                </div>
+                <div class="hl-item">
+                    <div class="hl-label">Startup</div>
+                    <div class="hl-val">Co-founder &amp; Technical Lead, BiKu</div>
                 </div>
                 <div class="hl-item">
                     <div class="hl-label">Leadership</div>
-                    <div class="hl-val">President, Dzana Afrobeats Dance Club</div>
-                </div>
-                <div class="hl-item">
-                    <div class="hl-label">Community</div>
-                    <div class="hl-val">Communications Chair, ColorStack Board</div>
+                    <div class="hl-val">President, Yale Dzana Dance</div>
                 </div>
             </div>`;
         }
     },
 
     skills: {
-        num: '92', name: 'Skills',
+        num: '92', name: 'Technical Skills',
         html() {
             return `
             <div class="skill-cat">
-                <div class="skill-cat-title">Software &amp; AI</div>
+                <div class="skill-cat-title">Technical</div>
                 ${sbar('Python', 90)}
                 ${sbar('JavaScript', 85)}
-                ${sbar('React &amp; Next.js', 82)}
-                ${sbar('Flask', 80)}
-                ${sbar('REST APIs &amp; Backend Development', 83)}
-                ${sbar('SQL &amp; Databases', 78)}
+                ${sbar('React / React 19', 84)}
+                ${sbar('Node.js', 82)}
+                ${sbar('Express', 80)}
+                ${sbar('MongoDB / Mongoose', 80)}
+                ${sbar('Tailwind CSS', 82)}
+                ${sbar('HTML / CSS', 85)}
+                ${sbar('Vite', 78)}
+                ${sbar('REST APIs', 85)}
                 ${sbar('Git &amp; Version Control', 88)}
+                ${sbar('Full-Stack Development', 83)}
+                ${sbar('Flask', 78)}
+                ${sbar('SQL &amp; Databases', 78)}
                 ${sbar('Linux / Command Line', 80)}
+            </div>
+            <div class="skill-cat">
+                <div class="skill-cat-title">AI &amp; Data Science</div>
                 ${sbar('Machine Learning (scikit-learn, TensorFlow)', 82)}
                 ${sbar('Data Mining &amp; Analysis', 85)}
                 ${sbar('Large Language Models / Prompt Engineering', 83)}
@@ -713,7 +723,7 @@ const SECTIONS = {
                 <div class="skill-cat-title">Tools &amp; Platforms</div>
                 ${sbar('MATLAB', 78)}
                 ${sbar('Jupyter Notebook', 80)}
-                ${sbar('GitHub Pages / Vercel', 85)}
+                ${sbar('Vercel / Render', 85)}
                 ${sbar('Data Analysis', 82)}
             </div>`;
         }
@@ -723,6 +733,30 @@ const SECTIONS = {
         num: '88', name: 'Projects',
         html() {
             return `
+            <div class="proj-item">
+                <div class="proj-name">Internship Tracker</div>
+                <span class="proj-badge">Full-Stack</span>
+                <div class="proj-desc">Full-stack web application for tracking internship applications through status stages (Not Applied, Applied, Interview, Rejected, Offer), with opening dates and deadlines. Features a live dashboard with stats and upcoming deadline alerts, per-company interview prep tracker (rounds, dates, notes, outcomes), automated daily email reminders via Gmail, a settings page for email configuration, and a dark/light mode toggle that persists across sessions.</div>
+                <div class="proj-tech">
+                    <span class="tech-tag">React 19</span><span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span><span class="tech-tag">MongoDB Atlas</span>
+                    <span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Render</span>
+                </div>
+                <div class="proj-links">
+                    <a class="proj-link" href="https://github.com/husseinzindonda-dev/internship-tracker" target="_blank">Source Code</a>
+                    <a class="proj-link" href="https://internship-para-hpz.vercel.app" target="_blank">Live App</a>
+                </div>
+            </div>
+            <div class="proj-item">
+                <div class="proj-name">BiKu</div>
+                <span class="proj-badge">Startup</span>
+                <div class="proj-desc">Co-founding an early-stage technology startup developing a mobile platform for subletting and roommate matching, targeting college students and urban young professionals. Role: Co-founder and Technical Lead — responsible for product strategy, technical architecture, go-to-market planning, and driving execution from concept to prototype.</div>
+                <div class="proj-tech">
+                    <span class="tech-tag">Mobile</span><span class="tech-tag">Product Strategy</span>
+                    <span class="tech-tag">Technical Architecture</span><span class="tech-tag">Go-to-Market</span>
+                </div>
+            </div>
             <div class="proj-item">
                 <div class="proj-name">Weather Dashboard Web Application</div>
                 <span class="proj-badge">Full-Stack</span>
@@ -783,154 +817,71 @@ const SECTIONS = {
         html() {
             return `
             <div class="exp-item">
-                <div class="exp-title">AI Engineering Intern</div>
-                <div class="exp-org">SynovAI</div>
-                <div class="exp-date">Summer 2025</div>
+                <div class="exp-title">AI Research &amp; Data Strategy Intern</div>
+                <div class="exp-org">SynovAI Inc</div>
+                <div class="exp-date">May 2026 — Present &nbsp;&middot;&nbsp; Remote</div>
                 <ul class="exp-bullets">
-                    <li>Data mining and AI pipeline development</li>
+                    <li>AI research and data strategy development</li>
                     <li>Building intelligent systems and AI-driven data processing workflows</li>
-                    <li>Applied machine learning techniques to real-world data challenges</li>
+                    <li>Applying machine learning techniques to real-world data challenges</li>
                 </ul>
             </div>
             <div class="exp-item">
-                <div class="exp-title">Electrical Engineering &amp; Computer Science</div>
-                <div class="exp-org">Yale University — B.S. Dual Degree</div>
-                <div class="exp-date">2024 — 2028 &nbsp;&middot;&nbsp; New Haven, CT</div>
+                <div class="exp-title">Teaching Assistant</div>
+                <div class="exp-org">Yale Pathways</div>
+                <div class="exp-date">June 2025 — August 2025 &nbsp;&middot;&nbsp; New Haven, CT</div>
                 <ul class="exp-bullets">
-                    <li>GPA: 3.44 &nbsp;|&nbsp; Focus: AI, Software Systems, Embedded Design</li>
-                    <li>Key coursework: Algorithms, Digital Logic, Signal Processing, Linear Algebra</li>
-                    <li>Projects spanning AI, full-stack development, and hardware design</li>
+                    <li>Supported instruction and student learning in Yale Pathways program</li>
+                    <li>Facilitated workshops and provided academic mentorship</li>
                 </ul>
             </div>
             <div class="exp-item">
-                <div class="exp-title">Chief College Aide</div>
-                <div class="exp-org">Yale University</div>
-                <div class="exp-date">2024 — Present</div>
+                <div class="exp-title">Research Consultant Intern</div>
+                <div class="exp-org">Now Boarding Digital</div>
+                <div class="exp-date">May 2025 — June 2025 &nbsp;&middot;&nbsp; Cape Town, South Africa</div>
                 <ul class="exp-bullets">
-                    <li>College operations, office management, and student services</li>
-                    <li>Point of contact for student inquiries and resources</li>
-                </ul>
-            </div>
-            <div class="exp-item">
-                <div class="exp-title">President, Dzana Afrobeats Dance Club</div>
-                <div class="exp-org">Compass at Yale</div>
-                <div class="exp-date">2024 — Present</div>
-                <ul class="exp-bullets">
-                    <li>Leading club operations, rehearsals, and campus performances</li>
-                    <li>Original choreography and creative direction</li>
-                </ul>
-            </div>
-            <div class="exp-item">
-                <div class="exp-title">Communications Chair</div>
-                <div class="exp-org">ColorStack Board &nbsp;&middot;&nbsp; Yale University</div>
-                <div class="exp-date">2024 — Present</div>
-                <ul class="exp-bullets">
-                    <li>Advancing representation of Black, Latinx, and Native American students in computing</li>
-                </ul>
-            </div>
-            <div class="exp-item">
-                <div class="exp-title">USAP Community School</div>
-                <div class="exp-org">Zimbabwe — Advanced STEM Curriculum</div>
-                <div class="exp-date">Graduated 2023</div>
-                <ul class="exp-bullets">
-                    <li>Bronze Medal — Engineering Technology, Zimbabwean Science Fair</li>
-                    <li>Yale Young Global Scholars Ambassador</li>
-                    <li>Silver Medal — Smart IoT Agriculture System (USAPCS Science Fair)</li>
+                    <li>Conducted research and analysis to support digital consulting initiatives</li>
+                    <li>Collaborated with the team on strategic recommendations</li>
                 </ul>
             </div>`;
         }
     },
 
     courses: {
-        num: '90', name: 'Courses',
+        num: '90', name: 'Education',
         html() {
             return `
-            <div class="course-stats-row">
-                <div class="cstat-box"><span class="cstat-num">3.44</span><span class="cstat-lbl">GPA</span></div>
-                <div class="cstat-box"><span class="cstat-num">3</span><span class="cstat-lbl">ECE</span></div>
-                <div class="cstat-box"><span class="cstat-num">7</span><span class="cstat-lbl">Math &amp; Sci</span></div>
-                <div class="cstat-box"><span class="cstat-num">3</span><span class="cstat-lbl">CS</span></div>
+            <div class="exp-item">
+                <div class="exp-title">Bachelor of Science — Electrical Engineering &amp; Computer Science</div>
+                <div class="exp-org">Yale University</div>
+                <div class="exp-date">Expected May 2028 &nbsp;&middot;&nbsp; New Haven, CT</div>
             </div>
             <div class="dept-sec">
-                <div class="dept-title">Electrical &amp; Computer Engineering</div>
+                <div class="dept-title">Relevant Coursework</div>
                 <ul class="course-list">
-                    <li>ECE 201 — Digital Logic &amp; Computer Architecture</li>
-                    <li>ECE 202 — Systems, Signals &amp; Communication</li>
-                    <li>ENAS 194 — Ordinary &amp; Partial Differential Equations</li>
-                </ul>
-            </div>
-            <div class="dept-sec">
-                <div class="dept-title">Physics</div>
-                <ul class="course-list">
-                    <li>PHYS 180 — Introductory Physics I</li>
-                    <li>PHYS 181 — Introductory Physics II</li>
-                </ul>
-            </div>
-            <div class="dept-sec">
-                <div class="dept-title">Mathematics</div>
-                <ul class="course-list">
-                    <li>MATH 115 — Calculus of Functions of One Variable II</li>
-                    <li>MATH 222 — Linear Algebra and Applications</li>
-                </ul>
-            </div>
-            <div class="dept-sec">
-                <div class="dept-title">Computer Science</div>
-                <ul class="course-list">
-                    <li>CPSC 201 — Introduction to Computer Science</li>
-                    <li>ENAS 130 — Computational Problem Solving</li>
-                    <li>CPSC 419 — Advanced Software Engineering <span class="audit-tag">Audited</span></li>
-                    <li>Full Stack Programming <span class="audit-tag">Audited</span></li>
-                </ul>
-            </div>
-            <div class="dept-sec">
-                <div class="dept-title">Engineering &amp; Applied Science</div>
-                <ul class="course-list">
-                    <li>MENG 205 — Computer-Aided Design &amp; Manufacturing</li>
-                    <li>EPS 275 — Introduction to Renewable Energy</li>
+                    <li>Data Structures</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Introduction to Machine Learning</li>
+                    <li>Digital Systems &amp; Computer Architecture</li>
+                    <li>Full Stack Web Development</li>
+                    <li>Linear Algebra</li>
+                    <li>Communications and Control</li>
                 </ul>
             </div>`;
         }
     },
 
     extras: {
-        num: '87', name: 'Extracurriculars',
+        num: '87', name: 'Leadership',
         html() {
             return `
             <div class="act-item">
                 <div class="act-header">
-                    <span class="act-icon">&#128084;</span>
-                    <div class="act-title">Chief College Aide</div>
-                </div>
-                <div class="act-role">Leadership &amp; Administration</div>
-                <div class="act-desc">Supporting college operations at Yale — administrative tasks, office management, student services, and collaboration with staff on college-wide initiatives.</div>
-                <div class="act-tags">
-                    <span class="act-tag">Leadership</span>
-                    <span class="act-tag">Communication</span>
-                    <span class="act-tag">Professional Dev</span>
-                    <span class="act-tag">Student Services</span>
-                </div>
-            </div>
-            <div class="act-item">
-                <div class="act-header">
-                    <span class="act-icon">&#9917;</span>
-                    <div class="act-title">Intramural Soccer</div>
-                </div>
-                <div class="act-role">Player &nbsp;|&nbsp; Team Member</div>
-                <div class="act-desc">Active in Yale's intramural soccer league. Develops teamwork, strategic thinking, and physical discipline — a vital balance to academic engineering life.</div>
-                <div class="act-tags">
-                    <span class="act-tag">Teamwork</span>
-                    <span class="act-tag">Fitness</span>
-                    <span class="act-tag">Strategy</span>
-                    <span class="act-tag">Community</span>
-                </div>
-            </div>
-            <div class="act-item">
-                <div class="act-header">
                     <span class="act-icon">&#128131;</span>
-                    <div class="act-title">Dzana — Afrobeats Dance Club</div>
+                    <div class="act-title">Yale Dzana Dance</div>
                 </div>
-                <div class="act-role">President, Dzana Afrobeats Dance Club</div>
-                <div class="act-desc">Leading Dzana, Yale's Afrobeats dance club on Compass at Yale. Creating original choreography, directing rehearsals, and sharing African culture through campus performances.</div>
+                <div class="act-role">President &nbsp;|&nbsp; September 2025 — Present</div>
+                <div class="act-desc">Leading Yale's Dzana dance group — creating original choreography, directing rehearsals, and sharing African culture through campus performances.</div>
                 <div class="act-tags">
                     <span class="act-tag">Creativity</span>
                     <span class="act-tag">Leadership</span>
@@ -941,15 +892,42 @@ const SECTIONS = {
             <div class="act-item">
                 <div class="act-header">
                     <span class="act-icon">&#127760;</span>
-                    <div class="act-title">ColorStack</div>
+                    <div class="act-title">ColorStack at Yale</div>
                 </div>
-                <div class="act-role">Communications Chair, ColorStack Board</div>
-                <div class="act-desc">Serving on the ColorStack board as Communications Chair, supporting the mission to increase the number of Black, Latinx, and Native American students in computing and related fields.</div>
+                <div class="act-role">Communications Chair &nbsp;|&nbsp; January 2025 — Present</div>
+                <div class="act-desc">Serving as Communications Chair on the ColorStack board, supporting the mission to increase the number of Black, Latinx, and Native American students in computing and related fields.</div>
                 <div class="act-tags">
                     <span class="act-tag">DEI</span>
                     <span class="act-tag">Communications</span>
                     <span class="act-tag">Community</span>
                     <span class="act-tag">Advocacy</span>
+                </div>
+            </div>
+            <div class="act-item">
+                <div class="act-header">
+                    <span class="act-icon">&#128084;</span>
+                    <div class="act-title">Yale University Berkeley College</div>
+                </div>
+                <div class="act-role">Chief Aide &nbsp;|&nbsp; January 2024 — Present</div>
+                <div class="act-desc">Supporting college operations at Yale Berkeley College — administrative tasks, office management, student services, and collaboration with staff on college-wide initiatives.</div>
+                <div class="act-tags">
+                    <span class="act-tag">Leadership</span>
+                    <span class="act-tag">Communication</span>
+                    <span class="act-tag">Professional Dev</span>
+                    <span class="act-tag">Student Services</span>
+                </div>
+            </div>
+            <div class="act-item">
+                <div class="act-header">
+                    <span class="act-icon">&#9917;</span>
+                    <div class="act-title">Yale Rovers Club</div>
+                </div>
+                <div class="act-role">Member &nbsp;|&nbsp; September 2025 — Present</div>
+                <div class="act-desc">Active member of the Yale Rovers Club.</div>
+                <div class="act-tags">
+                    <span class="act-tag">Community</span>
+                    <span class="act-tag">Sports</span>
+                    <span class="act-tag">Teamwork</span>
                 </div>
             </div>`;
         }
