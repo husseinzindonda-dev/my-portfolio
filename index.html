@@ -26,6 +26,7 @@
         html { scroll-behavior: smooth; }
 
         body {
+            position: relative;
             font-family: Outfit, sans-serif;
             background: var(--bg);
             color: var(--ink);
@@ -75,12 +76,40 @@
         }
         nav.scrolled { border-bottom-color: var(--line); }
 
+        .nav-brand {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            min-width: 0;
+        }
         .brand {
             font-weight: 600;
             letter-spacing: 0.14em;
             text-transform: uppercase;
             font-size: 0.78rem;
             text-decoration: none;
+        }
+        .clock {
+            color: var(--muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        .clock b { color: var(--copper); font-weight: 500; }
+
+        #signal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--copper);
+            box-shadow: 0 0 0 6px rgba(231, 160, 106, 0.16), 0 0 18px rgba(231, 160, 106, 0.9);
+            z-index: 6;
+            pointer-events: none;
+            will-change: transform;
         }
 
         .nav-links {
@@ -346,6 +375,112 @@
         .links a:hover { color: var(--ink); border-color: var(--ink); }
         .links { margin-top: auto; }
 
+        .preview-wrap {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.45s ease;
+        }
+        .card:hover .preview-wrap,
+        .card:focus-within .preview-wrap { grid-template-rows: 1fr; }
+        .preview {
+            overflow: hidden;
+            min-height: 0;
+            border-radius: 12px;
+            background: #0c0e13;
+            border: 1px solid transparent;
+        }
+        .preview-inner { padding: 12px 14px 14px; }
+        .ui-bar, .ui-row, .wx-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            font-size: 0.78rem;
+        }
+        .ui-bar { color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+        .ui-row { padding: 6px 0; border-top: 1px solid var(--line); color: #ddd6cb; }
+        .ui-row.deal { color: var(--mint); }
+        .scan {
+            height: 2px;
+            margin-top: 8px;
+            background: linear-gradient(90deg, transparent, var(--mint), transparent);
+            animation: scan 2.2s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0% { transform: translateX(-40%); opacity: 0; }
+            30% { opacity: 1; }
+            100% { transform: translateX(80%); opacity: 0; }
+        }
+        .kanban { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+        .col {
+            background: #161922;
+            border-radius: 8px;
+            padding: 8px;
+            min-height: 92px;
+        }
+        .col b {
+            display: block;
+            font-size: 0.68rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--copper);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        .slip {
+            height: 14px;
+            border-radius: 4px;
+            background: #2a2e3a;
+            margin-bottom: 6px;
+        }
+        .slip.hot { background: rgba(157, 255, 225, 0.35); animation: pulse 1.8s ease-in-out infinite; }
+        @keyframes pulse { 50% { opacity: 0.45; } }
+        .wx-temp {
+            font-family: "Instrument Serif", serif;
+            font-size: 2.4rem;
+            line-height: 1;
+            margin: 6px 0;
+        }
+        .wx-meta { color: var(--muted); font-size: 0.78rem; }
+        .wx-sun {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 35%, #fff 0 20%, var(--copper) 21% 70%, transparent 71%);
+            animation: spin 12s linear infinite;
+        }
+
+        .count-mark {
+            display: inline-flex;
+            gap: 7px;
+            margin-left: 12px;
+            letter-spacing: 0;
+        }
+        .count-mark i {
+            font-style: normal;
+            opacity: 0;
+        }
+        .section-label.played .count-mark i {
+            animation: countPop 0.4s ease forwards;
+            animation-delay: calc(var(--i) * 0.09s);
+        }
+        @keyframes countPop {
+            0% { opacity: 0.15; color: var(--muted); transform: translateY(2px); }
+            45% { opacity: 1; color: var(--mint); transform: none; }
+            100% { opacity: 0.55; color: var(--copper); }
+        }
+        .count-in .w {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(0.35em);
+        }
+        .count-in.played .w {
+            animation: wordIn 0.55s cubic-bezier(.2,.7,.2,1) forwards;
+            animation-delay: calc(0.32s + var(--i) * 0.06s);
+        }
+        @keyframes wordIn {
+            to { opacity: 1; transform: none; }
+        }
+
         .timeline { position: relative; display: grid; gap: 28px; }
         .rail {
             position: absolute;
@@ -523,23 +658,33 @@
             .portrait-wrap { justify-self: start; width: min(240px, 68vw); }
             .hero { min-height: auto; padding-top: 108px; align-items: start; }
             .card.wide { grid-column: auto; }
+            #signal { display: none; }
+            .clock .place { display: none; }
+            .preview-wrap { grid-template-rows: 1fr; }
         }
 
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             .reveal { opacity: 1; transform: none; animation: none; }
-            .orbit, .marquee-track { animation: none; }
-            .fill { transition: none; }
+            .orbit, .marquee-track, .scan, .slip.hot, .wx-sun { animation: none; }
+            .fill, .preview-wrap { transition: none; }
             .card, .btn { transition: none; }
+            .count-in .w { opacity: 1; transform: none; animation: none; }
+            .count-mark i { opacity: 0.55; animation: none; color: var(--copper); }
+            #signal { display: none; }
         }
     </style>
 </head>
 <body>
     <a class="skip" href="#work">Skip to work</a>
     <div class="progress" id="progress"></div>
+    <div id="signal" aria-hidden="true"></div>
 
     <nav id="nav">
-        <a class="brand" href="#top">Hussein Zindonda</a>
+        <div class="nav-brand">
+            <a class="brand" href="#top">Hussein Zindonda</a>
+            <time class="clock" id="clock"><span class="place">New Haven · </span><b>--:--</b></time>
+        </div>
         <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
@@ -555,7 +700,7 @@
         <canvas id="scope" aria-hidden="true"></canvas>
         <div class="hero-copy">
             <p class="kicker reveal">Yale University · EE &amp; CS · Class of 2028</p>
-            <h1 class="reveal" style="--d:.08s">Hussein<br><em>Zindonda</em></h1>
+            <h1><span id="lock-first">Hussein</span><br><em id="lock-last">Zindonda</em></h1>
             <p class="role reveal" style="--d:.16s">Currently <b id="role">building products that ship</b></p>
             <div class="hero-actions reveal" style="--d:.24s">
                 <a class="btn btn-solid" href="#work">See the work</a>
@@ -591,8 +736,8 @@
     </div>
 
     <section id="about">
-        <p class="section-label">About</p>
-        <h2>Engineer, founder, and someone who leads the room.</h2>
+        <p class="section-label">About <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Engineer,</span> <span class="w" style="--i:1">founder,</span> <span class="w" style="--i:2">and</span> <span class="w" style="--i:3">someone</span> <span class="w" style="--i:4">who</span> <span class="w" style="--i:5">leads</span> <span class="w" style="--i:6">the</span> <span class="w" style="--i:7">room.</span></h2>
         <div class="about-grid">
             <p class="lede">I'm a full-stack software engineer and startup co-founder studying Electrical Engineering &amp; Computer Science at Yale. In summer 2026 I interned as an AI Engineering Intern at SynovAI, building validated chemistry datasets for model training. I co-founded BiKu, a mobile platform for subletting and roommate matching, and built Tenge, an inventory and point-of-sale app for small retailers. I lead Yale Dzana Dance as President, serve as Communications Chair for ColorStack at Yale, and won 1st place in Yale's Cursor Rapid-Fire Build Challenge with an AI voice tutor.</p>
             <div class="stats">
@@ -605,13 +750,24 @@
     </section>
 
     <section id="work">
-        <p class="section-label">Selected work</p>
-        <h2>Things I have shipped.</h2>
+        <p class="section-label">Selected work <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Things</span> <span class="w" style="--i:1">I</span> <span class="w" style="--i:2">have</span> <span class="w" style="--i:3">shipped.</span></h2>
         <div class="work-grid">
             <article class="card">
                 <div class="card-top">
                     <h3>Tenge</h3>
                     <span class="badge">Full-stack</span>
+                </div>
+                <div class="preview-wrap">
+                    <div class="preview" aria-hidden="true">
+                        <div class="preview-inner">
+                            <div class="ui-bar"><span>Tenge</span><span>Sale</span></div>
+                            <div class="ui-row"><span>Rice 5kg</span><span>FIFO batch</span></div>
+                            <div class="ui-row"><span>Cooking oil</span><span>Shelf price</span></div>
+                            <div class="ui-row deal"><span>Negotiated line</span><span>New total</span></div>
+                            <div class="scan"></div>
+                        </div>
+                    </div>
                 </div>
                 <p>Inventory and point-of-sale app for small retailers, built after direct research with 3 shop owners. Tracks stock with FIFO batches, rolls prices forward automatically, and supports per-line negotiable pricing. Shipped in fully typed React and TypeScript with a Zustand state layer, and extending to Supabase for authentication and cloud sync.</p>
                 <div class="tags">
@@ -639,6 +795,15 @@
                     <h3>Internship Tracker</h3>
                     <span class="badge">Full-stack</span>
                 </div>
+                <div class="preview-wrap">
+                    <div class="preview" aria-hidden="true">
+                        <div class="preview-inner kanban">
+                            <div class="col"><b>Applied</b><div class="slip"></div><div class="slip"></div></div>
+                            <div class="col"><b>Interview</b><div class="slip"></div></div>
+                            <div class="col"><b>Offer</b><div class="slip hot"></div></div>
+                        </div>
+                    </div>
+                </div>
                 <p>Full-stack MERN app for managing a recruiting pipeline. Tracks applications through status stages with a REST API and MongoDB, a live dashboard, and separate frontend (Vercel) and backend (Render) deploys. Automated email reminders run daily at 8am through Gmail SMTP, with configurable deadline alerts and a settings page.</p>
                 <div class="tags">
                     <span class="tag">React 19</span><span class="tag">Node.js</span><span class="tag">Express</span>
@@ -665,6 +830,15 @@
                 <div class="card-top">
                     <h3>Weather Dashboard</h3>
                     <span class="badge">Full-stack</span>
+                </div>
+                <div class="preview-wrap">
+                    <div class="preview" aria-hidden="true">
+                        <div class="preview-inner">
+                            <div class="wx-top"><span class="wx-meta">Search a city</span><span class="wx-sun"></span></div>
+                            <div class="wx-temp">Live</div>
+                            <div class="wx-meta">OpenWeather · geocoded forecast</div>
+                        </div>
+                    </div>
                 </div>
                 <p>Full-stack Flask application providing real-time weather data for any city via the OpenWeather API, with error handling, geocoding, and a responsive UI.</p>
                 <div class="tags">
@@ -722,8 +896,8 @@
     </section>
 
     <section id="experience">
-        <p class="section-label">Experience</p>
-        <h2>Where the work happened.</h2>
+        <p class="section-label">Experience <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Where</span> <span class="w" style="--i:1">the</span> <span class="w" style="--i:2">work</span> <span class="w" style="--i:3">happened.</span></h2>
         <div class="timeline" id="timeline">
             <div class="rail" aria-hidden="true"><span id="rail-fill"></span></div>
             <article class="job">
@@ -758,8 +932,8 @@
     </section>
 
     <section id="education">
-        <p class="section-label">Education</p>
-        <h2>Yale, class of 2028.</h2>
+        <p class="section-label">Education <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Yale,</span> <span class="w" style="--i:1">class</span> <span class="w" style="--i:2">of</span> <span class="w" style="--i:3">2028.</span></h2>
         <div class="edu-head">
             <div>
                 <h3>B.S. Electrical Engineering &amp; Computer Science</h3>
@@ -788,8 +962,8 @@
     </section>
 
     <section id="skills">
-        <p class="section-label">Skills</p>
-        <h2>The toolkit.</h2>
+        <p class="section-label">Skills <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">The</span> <span class="w" style="--i:1">toolkit.</span></h2>
         <div class="skill-groups" id="skill-groups">
             <div>
                 <h3>Technical</h3>
@@ -847,8 +1021,8 @@
     </section>
 
     <section id="leadership">
-        <p class="section-label">Leadership</p>
-        <h2>Outside the editor.</h2>
+        <p class="section-label">Leadership <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Outside</span> <span class="w" style="--i:1">the</span> <span class="w" style="--i:2">editor.</span></h2>
         <div class="lead-grid">
             <article class="card">
                 <div class="card-top"><h3>Yale Dzana Dance</h3><span class="badge">President</span></div>
@@ -874,8 +1048,8 @@
     </section>
 
     <section id="contact">
-        <p class="section-label">Contact</p>
-        <h2>Say hello.</h2>
+        <p class="section-label">Contact <span class="count-mark" aria-hidden="true"><i style="--i:0">5</i><i style="--i:1">6</i><i style="--i:2">7</i><i style="--i:3">8</i></span></p>
+        <h2 class="count-in"><span class="w" style="--i:0">Say</span> <span class="w" style="--i:1">hello.</span></h2>
         <div class="contact-panel">
             <div>
                 <a class="big-mail" href="mailto:hussein.zindonda@yale.edu">hussein.zindonda@yale.edu</a>
@@ -906,6 +1080,50 @@
         const rail = document.getElementById('rail-fill');
         const timeline = document.getElementById('timeline');
 
+        const signal = document.getElementById('signal');
+
+        function placeSignal() {
+            if (!signal || getComputedStyle(signal).display === 'none') return;
+            const focus = window.scrollY + window.innerHeight * 0.42;
+            const hero = document.querySelector('.hero');
+            const work = document.getElementById('work');
+            const railEl = document.querySelector('.rail');
+            const skillsEl = document.getElementById('skill-groups');
+            const heroBox = hero.getBoundingClientRect();
+            const heroTop = heroBox.top + window.scrollY;
+            const heroBottom = heroTop + heroBox.height;
+            const heroY = heroTop + heroBox.height * 0.46;
+            const heroX = heroBox.left + heroBox.width * 0.58;
+            const gutterX = Math.max(28, window.innerWidth * 0.06 - 22);
+            const railBox = railEl.getBoundingClientRect();
+            const railX = railBox.left + railBox.width / 2;
+            const railTop = railBox.top + window.scrollY;
+            const railBot = railTop + railBox.height;
+            const skillBox = skillsEl.getBoundingClientRect();
+            const skillX = skillBox.left + 14;
+            const skillY = skillBox.top + window.scrollY + 36;
+            let x = heroX;
+            let y = heroY;
+            if (focus < heroBottom - 40) {
+                y = Math.min(heroY, Math.max(heroTop + 96, focus));
+            } else if (focus < railTop) {
+                const t = Math.min((focus - (heroBottom - 40)) / 220, 1);
+                x = heroX + (gutterX - heroX) * t;
+                y = focus;
+            } else if (focus < railBot) {
+                x = railX;
+                y = focus;
+            } else if (focus < skillY) {
+                const t = (focus - railBot) / Math.max(skillY - railBot, 1);
+                x = railX + (skillX - railX) * t;
+                y = railBot + (skillY - railBot) * t;
+            } else {
+                x = skillX;
+                y = skillY;
+            }
+            signal.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        }
+
         function onScroll() {
             const scrolled = window.scrollY;
             const height = document.documentElement.scrollHeight - window.innerHeight;
@@ -915,7 +1133,9 @@
             const rect = timeline.getBoundingClientRect();
             const visible = Math.min(Math.max(window.innerHeight * 0.65 - rect.top, 0), rect.height);
             rail.style.height = (visible / rect.height) * 100 + '%';
+            placeSignal();
         }
+        window.addEventListener('resize', placeSignal);
         window.addEventListener('scroll', onScroll, { passive: true });
         onScroll();
 
@@ -950,6 +1170,65 @@
             }, 2600);
             roleEl.style.transition = 'opacity 0.18s ease';
         }
+
+        function lockText(el) {
+            const finalText = el.textContent;
+            const glyphs = 'ABCDEFGHJKLMNPQRSTUVWXYZ0123456789';
+            let step = 0;
+            const max = finalText.length + 12;
+            function paint() {
+                el.textContent = [...finalText].map((ch, index) => {
+                    if (ch === ' ') return ' ';
+                    if (step > index + 7) return finalText[index];
+                    return glyphs[Math.floor(Math.random() * glyphs.length)];
+                }).join('');
+            }
+            paint();
+            const timer = setInterval(() => {
+                step += 1;
+                if (step > max) {
+                    el.textContent = finalText;
+                    clearInterval(timer);
+                    return;
+                }
+                paint();
+            }, 42);
+        }
+        if (!reduce) {
+            lockText(document.getElementById('lock-first'));
+            lockText(document.getElementById('lock-last'));
+        }
+
+        const clock = document.getElementById('clock');
+        function tickClock() {
+            const time = new Intl.DateTimeFormat('en-US', {
+                timeZone: 'America/New_York',
+                hour: 'numeric',
+                minute: '2-digit'
+            }).format(new Date());
+            clock.innerHTML = '<span class="place">New Haven · </span><b>' + time + '</b>';
+            clock.dateTime = new Date().toISOString();
+        }
+        tickClock();
+        setInterval(tickClock, 30000);
+
+        document.querySelectorAll('.count-in').forEach((heading) => {
+            if (reduce) {
+                heading.classList.add('played');
+                const label = heading.previousElementSibling;
+                if (label) label.classList.add('played');
+            }
+        });
+        const headObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('played');
+                const label = entry.target.previousElementSibling;
+                if (label) label.classList.add('played');
+                headObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.count-in').forEach((heading) => headObserver.observe(heading));
 
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
