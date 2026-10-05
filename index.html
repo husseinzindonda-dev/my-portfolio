@@ -659,7 +659,7 @@ const SECTIONS = {
                 </div>
             </div>
             <div class="about-intro">
-                I'm a full-stack software engineer and startup co-founder who also leads and creates. I'm a Yale University student studying Electrical Engineering &amp; Computer Science, currently interning as an AI Research &amp; Data Strategy Intern at SynovAI. I'm passionate about building intelligent systems and products that matter — from founding BiKu, a mobile platform for subletting and roommate matching, to leading Yale Dzana Dance as President and serving on the ColorStack board as Communications Chair.
+                I'm a full-stack software engineer and startup co-founder studying Electrical Engineering &amp; Computer Science at Yale. In summer 2026 I interned as an AI Engineering Intern at SynovAI, building validated chemistry datasets for model training. I co-founded BiKu, a mobile platform for subletting and roommate matching, and built Tenge, an inventory and point-of-sale app for small retailers. I lead Yale Dzana Dance as President, serve as Communications Chair for ColorStack at Yale, and won 1st place in Yale's Cursor Rapid-Fire Build Challenge with an AI voice tutor.
             </div>
             <div class="about-highlights">
                 <div class="hl-item">
@@ -668,11 +668,11 @@ const SECTIONS = {
                 </div>
                 <div class="hl-item">
                     <div class="hl-label">Internship</div>
-                    <div class="hl-val">AI Research &amp; Data Strategy Intern &nbsp;&middot;&nbsp; SynovAI</div>
+                    <div class="hl-val">AI Engineering Intern &nbsp;&middot;&nbsp; SynovAI, Summer 2026</div>
                 </div>
                 <div class="hl-item">
                     <div class="hl-label">Startup</div>
-                    <div class="hl-val">Co-founder &amp; Technical Lead, BiKu</div>
+                    <div class="hl-val">Co-founder &amp; Founding Engineer, BiKu</div>
                 </div>
                 <div class="hl-item">
                     <div class="hl-label">Leadership</div>
@@ -689,11 +689,18 @@ const SECTIONS = {
             <div class="skill-cat">
                 <div class="skill-cat-title">Technical</div>
                 ${sbar('Python', 90)}
+                ${sbar('C', 88)}
+                ${sbar('TypeScript', 85)}
                 ${sbar('JavaScript', 85)}
-                ${sbar('React / React 19', 84)}
+                ${sbar('C++', 78)}
+                ${sbar('Java', 75)}
+                ${sbar('React / React Native', 84)}
+                ${sbar('Next.js', 76)}
                 ${sbar('Node.js', 82)}
                 ${sbar('Express', 80)}
                 ${sbar('MongoDB / Mongoose', 80)}
+                ${sbar('PostgreSQL', 76)}
+                ${sbar('Zustand', 78)}
                 ${sbar('Tailwind CSS', 82)}
                 ${sbar('HTML / CSS', 85)}
                 ${sbar('Vite', 78)}
@@ -709,6 +716,7 @@ const SECTIONS = {
                 ${sbar('Machine Learning (scikit-learn, TensorFlow)', 82)}
                 ${sbar('Data Mining &amp; Analysis', 85)}
                 ${sbar('Large Language Models / Prompt Engineering', 83)}
+                ${sbar('Agentic AI Systems', 80)}
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-title">Hardware &amp; Circuit Design</div>
@@ -718,12 +726,17 @@ const SECTIONS = {
                 ${sbar('Signal Processing', 82)}
                 ${sbar('Control Systems', 80)}
                 ${sbar('AutoCAD', 75)}
+                ${sbar('SolidWorks', 75)}
+                ${sbar('Verilog', 74)}
             </div>
             <div class="skill-cat">
                 <div class="skill-cat-title">Tools &amp; Platforms</div>
                 ${sbar('MATLAB', 78)}
                 ${sbar('Jupyter Notebook', 80)}
                 ${sbar('Vercel / Render', 85)}
+                ${sbar('AWS', 76)}
+                ${sbar('Firebase', 78)}
+                ${sbar('Supabase', 74)}
                 ${sbar('Data Analysis', 82)}
             </div>`;
         }
@@ -734,9 +747,32 @@ const SECTIONS = {
         html() {
             return `
             <div class="proj-item">
+                <div class="proj-name">Tenge</div>
+                <span class="proj-badge">Full-Stack</span>
+                <div class="proj-desc">Inventory and point-of-sale app for small retailers, built after direct research with 3 shop owners. Tracks stock with FIFO batches, rolls prices forward automatically, and supports per-line negotiable pricing. Shipped in fully typed React and TypeScript with a Zustand state layer, and extending to Supabase for authentication and cloud sync.</div>
+                <div class="proj-tech">
+                    <span class="tech-tag">React</span><span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Vite</span><span class="tech-tag">Zustand</span>
+                    <span class="tech-tag">Tailwind CSS</span><span class="tech-tag">Supabase</span>
+                    <span class="tech-tag">Vercel</span>
+                </div>
+                <div class="proj-links">
+                    <a class="proj-link" href="https://tenge-seven.vercel.app" target="_blank">Live App</a>
+                </div>
+            </div>
+            <div class="proj-item">
+                <div class="proj-name">AI Voice Tutor</div>
+                <span class="proj-badge">1st Place</span>
+                <div class="proj-desc">1st place, Cursor Rapid-Fire Build Challenge at Yale. An AI voice tutor that teaches from a student's own course materials, with a live whiteboard and Canvas integration.</div>
+                <div class="proj-tech">
+                    <span class="tech-tag">AI</span><span class="tech-tag">Voice</span>
+                    <span class="tech-tag">Canvas</span><span class="tech-tag">Whiteboard</span>
+                </div>
+            </div>
+            <div class="proj-item">
                 <div class="proj-name">Internship Tracker</div>
                 <span class="proj-badge">Full-Stack</span>
-                <div class="proj-desc">Full-stack web application for tracking internship applications through status stages (Not Applied, Applied, Interview, Rejected, Offer), with opening dates and deadlines. Features a live dashboard with stats and upcoming deadline alerts, per-company interview prep tracker (rounds, dates, notes, outcomes), automated daily email reminders via Gmail, a settings page for email configuration, and a dark/light mode toggle that persists across sessions.</div>
+                <div class="proj-desc">Full-stack MERN app for managing a recruiting pipeline. Tracks applications through status stages with a REST API and MongoDB, a live dashboard, and separate frontend (Vercel) and backend (Render) deploys. Automated email reminders run daily at 8am through Gmail SMTP, with configurable deadline alerts and a settings page.</div>
                 <div class="proj-tech">
                     <span class="tech-tag">React 19</span><span class="tech-tag">Node.js</span>
                     <span class="tech-tag">Express</span><span class="tech-tag">MongoDB Atlas</span>
@@ -751,10 +787,11 @@ const SECTIONS = {
             <div class="proj-item">
                 <div class="proj-name">BiKu</div>
                 <span class="proj-badge">Startup</span>
-                <div class="proj-desc">Co-founding an early-stage technology startup developing a mobile platform for subletting and roommate matching, targeting college students and urban young professionals. Role: Co-founder and Technical Lead — responsible for product strategy, technical architecture, go-to-market planning, and driving execution from concept to prototype.</div>
+                <div class="proj-desc">Co-founded a mobile platform for subletting and roommate matching. Shipped authentication and core onboarding, recruited the first 6 validated beta users, and we are preparing a wider campus launch. Co-own the technical architecture and product decisions across the stack.</div>
                 <div class="proj-tech">
-                    <span class="tech-tag">Mobile</span><span class="tech-tag">Product Strategy</span>
-                    <span class="tech-tag">Technical Architecture</span><span class="tech-tag">Go-to-Market</span>
+                    <span class="tech-tag">React Native</span><span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span><span class="tech-tag">Firebase</span>
+                    <span class="tech-tag">AWS</span>
                 </div>
             </div>
             <div class="proj-item">
@@ -817,13 +854,13 @@ const SECTIONS = {
         html() {
             return `
             <div class="exp-item">
-                <div class="exp-title">AI Research &amp; Data Strategy Intern</div>
-                <div class="exp-org">SynovAI Inc</div>
-                <div class="exp-date">May 2026 — Present &nbsp;&middot;&nbsp; Remote</div>
+                <div class="exp-title">AI Engineering Intern</div>
+                <div class="exp-org">SynovAI, Inc</div>
+                <div class="exp-date">May 2026 — August 2026 &nbsp;&middot;&nbsp; Glastonbury, CT</div>
                 <ul class="exp-bullets">
-                    <li>AI research and data strategy development</li>
-                    <li>Building intelligent systems and AI-driven data processing workflows</li>
-                    <li>Applying machine learning techniques to real-world data challenges</li>
+                    <li>Built a Python pipeline (BeautifulSoup, RDKit) that mined and validated 400+ single-step reaction routes from about 520 Organic Syntheses procedures, converting chemical names to molecular structures at about 98% validity</li>
+                    <li>Designed a multi-stage quality check (atom balance, reactant selection, functional-group coverage) that removed 100+ inconsistent routes and cut structurally flagged entries by about 40%</li>
+                    <li>Wrote a licensing audit and data-quality notes that flagged extraction blockers and kept non-compliant sources out of model training</li>
                 </ul>
             </div>
             <div class="exp-item">
@@ -838,10 +875,10 @@ const SECTIONS = {
             <div class="exp-item">
                 <div class="exp-title">Research Consultant Intern</div>
                 <div class="exp-org">Now Boarding Digital</div>
-                <div class="exp-date">May 2025 — June 2025 &nbsp;&middot;&nbsp; Cape Town, South Africa</div>
+                <div class="exp-date">May 2025 — July 2025 &nbsp;&middot;&nbsp; Cape Town, South Africa</div>
                 <ul class="exp-bullets">
-                    <li>Conducted research and analysis to support digital consulting initiatives</li>
-                    <li>Collaborated with the team on strategic recommendations</li>
+                    <li>Led AI and UX research across 5 sectors (EdTech, FinTech, HealthTech, InsurTech, Marketplace) on a 6-person consulting team</li>
+                    <li>Compared 10+ products, including Khanmigo, Lemonade, Etsy, and Upstart, and turned the findings into 3 design recommendations on transparency, personalization, and trust</li>
                 </ul>
             </div>`;
         }
@@ -866,6 +903,19 @@ const SECTIONS = {
                     <li>Full Stack Web Development</li>
                     <li>Linear Algebra</li>
                     <li>Communications and Control</li>
+                    <li>Project Management Foundations</li>
+                    <li>Humanities Data Analysis</li>
+                    <li>Microeconomics</li>
+                    <li>Physics I &amp; II</li>
+                    <li>Computer-Aided Design</li>
+                </ul>
+            </div>
+            <div class="dept-sec">
+                <div class="dept-title">Achievements</div>
+                <ul class="course-list">
+                    <li>1st Place, Cursor Rapid-Fire Build Challenge at Yale</li>
+                    <li>Nathaniel and Phyllis Seidman Scholar</li>
+                    <li>Matilde Sanchez de Casellas Scholar</li>
                 </ul>
             </div>`;
         }
@@ -881,7 +931,7 @@ const SECTIONS = {
                     <div class="act-title">Yale Dzana Dance</div>
                 </div>
                 <div class="act-role">President &nbsp;|&nbsp; September 2025 — Present</div>
-                <div class="act-desc">Leading Yale's Dzana dance group — creating original choreography, directing rehearsals, and sharing African culture through campus performances.</div>
+                <div class="act-desc">Lead 30+ members of Yale's Dzana dance group — creating and teaching original choreography, directing rehearsals, and coordinating campus performances and collaborations with other dance clubs.</div>
                 <div class="act-tags">
                     <span class="act-tag">Creativity</span>
                     <span class="act-tag">Leadership</span>
@@ -908,8 +958,8 @@ const SECTIONS = {
                     <span class="act-icon">&#128084;</span>
                     <div class="act-title">Yale University Berkeley College</div>
                 </div>
-                <div class="act-role">Chief Aide &nbsp;|&nbsp; January 2024 — Present</div>
-                <div class="act-desc">Supporting college operations at Yale Berkeley College — administrative tasks, office management, student services, and collaboration with staff on college-wide initiatives.</div>
+                <div class="act-role">Chief Aide &nbsp;|&nbsp; January 2025 — Present</div>
+                <div class="act-desc">Lead a team of 20 aides through shift coordination and staff training, and run 5+ college events each semester at Yale Berkeley College.</div>
                 <div class="act-tags">
                     <span class="act-tag">Leadership</span>
                     <span class="act-tag">Communication</span>
